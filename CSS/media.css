@@ -1,0 +1,134 @@
+
+@media screen and (max-width: 768px) and (min-width:320px)
+{
+
+    .navbar-toggler:hover .navbar-collapse{
+
+
+        visibility: visible;
+        transition: visibility 0.5s ease;
+    }
+
+    .navbar-toggler:hover .navbar-right{
+
+        visibility: visible;
+        transition: visibility 0.5s ease;
+    }
+
+    .navbar-toggler:hover .navbar-collapse{
+
+        visibility: visible;
+        transition: visibility 0.5s ease;
+    }
+
+    .navbar-toggler:hover .navbar-item{
+
+        visibility: visible;
+        transition: visibility 0.5s ease;
+    }
+
+
+      .button2 {
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        color: #1c1c1c;
+        background-color: #fff;
+        border: #1c1c1c solid 1px;
+        transition: all 0.5s;
+        margin-top: 10px;
+    }
+
+    .header h4{
+
+        font-size: 30px;
+    }
+
+    .header h4::after{
+
+        font-size: 30px;
+    }
+
+    .top-icon{
+
+        background-color: #fff;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        top: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        transition: 1s all ease;
+        opacity: 0;
+        text-decoration: none;
+        color: #1C1C1C;
+        text-underline-offset: 0;
+        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+        border: #cac9c9 2px solid;
+        z-index: 999999999999;
+      }
+      
+      body:hover .top-icon{
+      
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+        left: 85%;
+        transition: left 0.5 ease;
+        transition: opacity 0.5 ease;
+        transition: width 0.5 ease;
+        transition: height 0.5 ease;
+        transition-delay: 1s;
+      }
+      
+      .top-icon i{
+      
+        color: #1C1C1C;
+      }
+      
+      .bottom-icon{
+      
+        background-color: #fff;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        top: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 50%;
+        transition: 1s all ease;
+        opacity: 0;
+        text-decoration: none;
+        color: #1C1C1C;
+        text-underline-offset: 0;
+        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+        border: #cac9c9 2px solid;
+        z-index: 999999999999;
+      }
+      
+      .bottom-icon i{
+      
+        color: #1C1C1C;
+      }
+      
+      body:hover .bottom-icon{
+      
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+        right: 85%;
+        transition: right 0.5 ease;
+        transition: opacity 0.5 ease;
+        transition: width 0.5 ease;
+        transition: height 0.5 ease;
+        transition-delay: 1s;
+      }
+      
+
+}
