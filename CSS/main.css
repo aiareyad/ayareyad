@@ -10,7 +10,7 @@
     scroll-behavior: smooth;
 }
 
-*:not(#header):hover .navbar{
+*:hover .navbar{
         
     background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 5px 80px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
     transition-delay: 1s;
 }
 
-*:not(.navbar):hover .navbar{
+*:hover .navbar{
         
     background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,16 @@
     transition-delay: 1s;
 }
 
-*:not(#header, .navbar):hover .navbar a {
+head{
+
+  background: transparent !important
+}
+
+body {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+:hover .navbar a {
 
     color: #1c1c1c;
     transition: all 1s ease;
@@ -38,14 +47,14 @@
 
 }
 
-*:not(#header, .navbar):hover .toggler-icon{
+:hover .toggler-icon{
 
   color: #1C1C1C;
   transition: all 1s ease;
   transition-delay: 1s;
 }
 
-*:not(#header, .navbar):hover .navbar-left span{
+:hover .navbar-left span{
 
     color: #1c1c1c;
     transition: all 1s ease;
@@ -89,6 +98,9 @@ body:hover .top-icon{
 .top-icon i{
 
   color: #1C1C1C;
+}
+.about {
+  background-color: #831111;
 }
 
 .bottom-icon{
@@ -359,7 +371,7 @@ body:hover .bottom-icon{
 
 .header {
 
-    background-image: linear-gradient(#00000099,#00000099), url(../imgs/ODEON.jpg);
+    background-image: linear-gradient(#00000099,#00000099), url(../imgs/hero.jpg);
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -402,128 +414,67 @@ body:hover .bottom-icon{
 }
 
 @keyframes typing {
-    1% {
-      content: "O|";
-    }
-    2% {
-      content: "OD|";
-    }
-    3% {
-      content: "ODE|";
-    }
-    4% {
-      content: "ODEO|";
-    }
-    5% {
-      content: "ODEON|";
-    }
-    
-    39% {
-      content: "ODEON|";
-    }
-    40% {
-      content: "ODEO|";
-    }41% {
-      content: "ODE|";
-    }42% {
-      content: "OD|";
-    }43% {
-      content: "O|";
-    }
-    44% {
-      content: "|";
-    }
-    45% {
-      content: "De|";
-    }
-    46% {
-      content: "Dev|";
-    }
-    47% {
-      content: "Deve|";
-    }
-    48% {
-      content: "Devel|";
-    }
-    49% {
-      content: "Develo|";
-    }
-    50% {
-      content: "Develop|";
-    }
-    51% {
-      content: "Develope|";
-    }
-    52% {
-      content: "Developer|";
-    }
-    53% {
-      content: "Developers|";
-    }  
-    64% {
-      content: "Developers|";
-    }
-    65% {
-      content: "Developer|";
-    }
-    66% {
-      content: "Develope|";
-    }
-    67% {
-      content: "Develop|";
-    }
-    68% {
-      content: "Develo|";
-    }
-    69% {
-      content: "Devel|";
-    }
-    70% {
-      content: "Deve|";
-    }
-    71% {
-      content: "Dev|";
-    }
-    72% {
-      content: "De|";
-    }
-    73% {
-      content: "Des|";
-    }
-    74% {
-      content: "Desi|";
-    }
-    75% {
-      content: "Desig|";
-    }
-    76% {
-      content: "Design|";
-    }
-    77% {
-      content: "Designe|";
-    }
-    78% {
-      content: "Designer|";
-    }
-    79% {
-      content: "Designers|";
-    }
-    96% {
-      content: "Designer|";
-    }
-    97% {
-      content: "Design|";
-    }
-    98% {
-      content: "Desi|";
-    }
-    99% {
-      content: "De|";
-    }
-    100% {
-      content: "|";
-    }
-  }
+
+  /* AYA REYAD */
+  0%  { content: "A|"; }
+  2%  { content: "AY|"; }
+  4%  { content: "AYA|"; }
+  6%  { content: "AYA |"; }
+  8%  { content: "AYA R|"; }
+  10% { content: "AYA RE|"; }
+  12% { content: "AYA REY|"; }
+  14% { content: "AYA REYA|"; }
+  16% { content: "AYA REYAD|"; }
+
+  /* DELETE AYA REYAD */
+  18% { content: "AYA REYA|"; }
+  20% { content: "AYA REY|"; }
+  22% { content: "AYA RE|"; }
+  24% { content: "AYA R|"; }
+  26% { content: "AYA |"; }
+  28% { content: "AYA|"; }
+  30% { content: "AY|"; }
+  32% { content: "A|"; }
+
+  /* DESIGNER */
+  34% { content: "D|"; }
+  36% { content: "De|"; }
+  38% { content: "Des|"; }
+  40% { content: "Desi|"; }
+  42% { content: "Desig|"; }
+  44% { content: "Design|"; }
+  46% { content: "Designe|"; }
+  48% { content: "Designer|"; }
+
+  /* DELETE DESIGNER */
+  50% { content: "Designe|"; }
+  52% { content: "Design|"; }
+  54% { content: "Desig|"; }
+  56% { content: "Desi|"; }
+  58% { content: "Des|"; }
+  60% { content: "De|"; }
+
+  /* DEVELOPER */
+  62% { content: "Dev|"; }
+  64% { content: "Deve|"; }
+  66% { content: "Devel|"; }
+  68% { content: "Develo|"; }
+  70% { content: "Develop|"; }
+  72% { content: "Develope|"; }
+  74% { content: "Developer|"; }
+
+  /* DELETE DEVELOPER */
+  76% { content: "Develope|"; }
+  78% { content: "Develop|"; }
+  80% { content: "Develo|"; }
+  82% { content: "Devel|"; }
+  84% { content: "Deve|"; }
+  86% { content: "Dev|"; }
+  88% { content: "De|"; }
+  90% { content: "D|"; }
+  100% { content: "|"; }
+}
+
 
 .header h4 span{
 
@@ -566,11 +517,17 @@ body:hover .bottom-icon{
 
 /* ---------- Start of About Section ---------- */
 
+#about {
+  background: transparent !important;
+}
+
 .about {
 
     padding: 50px;
     background-color: transparent !important;
 }
+
+
 
 .about-img img{
 
@@ -587,7 +544,6 @@ body:hover .bottom-icon{
     position: absolute;
     left: -15px;
     bottom: -30px;
-    background-image: url(../imgs/dots.png);
     background-repeat: repeat;
     z-index: 1;
 }
