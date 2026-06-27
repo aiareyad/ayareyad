@@ -348,19 +348,37 @@
   /* ---------- timeline ---------- */
   .timeline{ position:relative; margin-top:20px; }
   .timeline-line{ position:absolute; left:130px; top:0; bottom:0; width:1px; background:var(--line); }
-  @media (max-width:700px){ .timeline-line{ left:18px; } }
   .t-item{ display:grid; grid-template-columns:130px 1fr; gap:40px; padding:36px 0; position:relative; }
-  @media (max-width:700px){ .t-item{ grid-template-columns:18px 1fr; gap:24px; } }
   .t-item .t-year{ font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--mauve); padding-top:4px; }
-  @media (max-width:700px){ .t-item .t-year{ display:none; } }
   .t-item .t-dot{
     position:absolute; left:124px; top:42px; width:13px; height:13px; border-radius:50%; background:var(--charcoal);
     border:2px solid var(--neon-pink); box-shadow:0 0 0 4px var(--charcoal);
   }
-  @media (max-width:700px){ .t-item .t-dot{ left:12px; } }
   .t-item h3{ font-family:var(--serif); font-size:clamp(1.2rem,2vw,1.5rem); font-weight:500; }
   .t-item .t-tag{ font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--blush); margin-bottom:8px; display:block; }
   .t-item p{ margin-top:10px; color:var(--ivory-dim); line-height:1.65; max-width:56ch; font-size:.96rem; }
+
+  /* timeline collapses to a single left-aligned rail on smaller screens;
+     the year now reflows above the title instead of disappearing */
+  @media (max-width:700px){
+    .timeline-line{ left:6px; }
+    .t-item{
+      display:block; grid-template-columns:none; gap:0;
+      padding:0 0 32px 26px; position:relative;
+    }
+    .t-item .t-dot{ left:0; top:4px; }
+    .t-item .t-year{
+      display:block; padding-top:0; margin-bottom:6px; font-size:11px;
+    }
+    .t-item .t-tag{ margin-bottom:6px; }
+    .t-item h3{ font-size:1.15rem; }
+    .t-item p{ font-size:.92rem; max-width:none; }
+  }
+
+  @media (max-width:420px){
+    .t-item{ padding-left:20px; }
+    .t-item .t-dot{ width:11px; height:11px; }
+  }
 
   /* ---------- testimonials ---------- */
   .testimonials-section{ background:var(--charcoal-2); }
@@ -540,12 +558,7 @@
         <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Post1.png" alt="">
-              <rect width="400" height="300" fill="var(--espresso)"/>
-              <circle cx="320" cy="60" r="120" fill="var(--charcoal-2)"/>
-              <path d="M40 220 L120 140 L200 200 L280 100 L360 180" stroke="var(--neon-pink)" stroke-width="2" fill="none" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
-            <div class="pv-glass"><span>Social Media Post</span><span>2024</span></div>
+            <div class="pv-glass"><span>Social Media Post</span><span>2026</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">01 / 20</div>
@@ -558,12 +571,7 @@
         <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Post2.png" alt="">
-              <rect width="400" height="300" fill="var(--mauve)" opacity="0.25"/>
-              <ellipse cx="120" cy="180" rx="90" ry="90" fill="var(--blush)" opacity="0.4"/>
-              <rect x="220" y="60" width="140" height="180" rx="8" fill="var(--charcoal-2)" opacity="0.6"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
-            <div class="pv-glass"><span>Social Media Post</span><span>2024</span></div>
+            <div class="pv-glass"><span>Social Media Post</span><span>2026</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">02 / 20</div>
@@ -573,15 +581,9 @@
           </div>
         </div>
 
-                                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/3rd-Post.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2026</span></div>
           </div>
           <div class="project-info">
@@ -591,15 +593,10 @@
             <div class="tags"><span>SMP</span><span>Real Estate</span></div>
           </div>
         </div>
-                        <div class="project-card">
+
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/2nd-Post.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2026</span></div>
           </div>
           <div class="project-info">
@@ -610,15 +607,9 @@
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/1st-Post.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
@@ -632,12 +623,6 @@
         <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Asdekaa-Post.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
@@ -652,164 +637,110 @@
         <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Pastaya-2nd-Post.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">07 / 20</div>
             <h3>Pastaya</h3>
-            <p>Showcase Pastaya’s chicken risotto as a delicious, premium meal that combines creamy texture, rich flavors, and a satisfying dining experience.</p>
+            <p>Showcase Pastaya's chicken risotto as a delicious, premium meal that combines creamy texture, rich flavors, and a satisfying dining experience.</p>
             <div class="tags"><span>SMP</span><span>F&B</span></div>
           </div>
         </div>
 
-                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Pastaya-3rd-Post.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">08 / 20</div>
             <h3>Pastaya</h3>
-            <p>Highlight Pastaya’s cold cuts sandwich as a delicious, filling, and premium option perfect for quick meals and cravings.</p>
+            <p>Highlight Pastaya's cold cuts sandwich as a delicious, filling, and premium option perfect for quick meals and cravings.</p>
             <div class="tags"><span>SMP</span><span>F&B</span></div>
           </div>
         </div>
 
-                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Pastaya-1st-Post (1).jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">09 / 20</div>
             <h3>Pastaya</h3>
-            <p>Showcase Pastaya’s Chicken BBQ Pizza as a delicious, satisfying meal that combines smoky BBQ flavors with a cheesy, freshly baked pizza experience.</p>
+            <p>Showcase Pastaya's Chicken BBQ Pizza as a delicious, satisfying meal that combines smoky BBQ flavors with a cheesy, freshly baked pizza experience.</p>
             <div class="tags"><span>SMP</span><span>F&B</span></div>
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/KRYM.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2024</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">10 / 20</div>
             <h3>KRYM</h3>
-            <p>Announce Krym’s soft opening and create excitement around discovering the new dessert destination.</p>
+            <p>Announce Krym's soft opening and create excitement around discovering the new dessert destination.</p>
             <div class="tags"><span>SMP</span><span>F&B</span></div>
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Carina-Shopping-Bag-Mockup.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Shopping Bag Mockup</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">11 / 20</div>
             <h3>Carina</h3>
-            <p>Showcase Carina’s shopping bag design as a reflection of the brand identity, style, and premium customer experience.</p>
+            <p>Showcase Carina's shopping bag design as a reflection of the brand identity, style, and premium customer experience.</p>
             <div class="tags"><span>SMP</span><span>Packaging</span><span>Mockup</span></div>
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Elephants-Ink-Social-Media-Post-Size.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Visual Direction</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">12 / 20</div>
             <h3>Elephants Ink</h3>
-            <p>Celebrate Elephants Ink reaching a 10-year milestone while introducing the agency’s refreshed visual direction and evolved brand identity.</p>
+            <p>Celebrate Elephants Ink reaching a 10-year milestone while introducing the agency's refreshed visual direction and evolved brand identity.</p>
             <div class="tags"><span>SMP</span><span>Visual Direction</span></div>
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Event-Agenda-Route-tr.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Event Agenda Design</span><span>2026</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">13 / 20</div>
             <h3>Route</h3>
-            <p>Create an elegant agenda design for Route IT Training Center’s “Egypt’s Tech Awards” event, highlighting the ceremony flow and honoring leading companies in the technology sector.</p>
+            <p>Create an elegant agenda design for Route IT Training Center's "Egypt's Tech Awards" event, highlighting the ceremony flow and honoring leading companies in the technology sector.</p>
             <div class="tags"><span>Print Design</span><span>IT</span></div>
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Art-house-Post (1).png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">14 / 20</div>
             <h3>Art House</h3>
-            <p>Introduce Art House’s new Lazy Boy and highlight its comfort, design, and premium quality to attract customers looking for stylish relaxation solutions.</p>
+            <p>Introduce Art House's new Lazy Boy and highlight its comfort, design, and premium quality to attract customers looking for stylish relaxation solutions.</p>
             <div class="tags"><span>SMP</span><span>Furniture</span></div>
           </div>
         </div>
 
-                        <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/dareina.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Moble Application UI Design</span><span>2025</span></div>
           </div>
           <div class="project-info">
@@ -820,97 +751,67 @@
           </div>
         </div>
 
-                                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Odeon-Moodboard.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Moodboard</span><span>2024</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">16 / 20</div>
             <h3>Odeon Business Consultancy</h3>
-            <p>Create a visual direction moodboard that reflects Odeon Business Consultancy’s professionalism, strategic thinking, and ability to deliver smart business solutions.</p>
-            <div class="tags"><span>Moodboard<span>Visual Direction</span><span>Business Consultancy</span></div>
+            <p>Create a visual direction moodboard that reflects Odeon Business Consultancy's professionalism, strategic thinking, and ability to deliver smart business solutions.</p>
+            <div class="tags"><span>Moodboard</span><span>Visual Direction</span><span>Business Consultancy</span></div>
           </div>
         </div>
 
-                                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Puffy&Fluffy-Sporting.png" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2024</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">17 / 20</div>
             <h3>Puffy & Fluffy</h3>
-            <p>Announce Puffy & Fluffy’s soft opening and create excitement around the new brand, inviting customers to discover their sweet creations.</p>
+            <p>Announce Puffy & Fluffy's soft opening and create excitement around the new brand, inviting customers to discover their sweet creations.</p>
             <div class="tags"><span>SMP</span><span>F&B</span></div>
           </div>
         </div>
 
-                                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Boba-Spot-Sheikh-Zayedfinall.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Social Media Post</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">18 / 20</div>
             <h3>Boba Spot</h3>
-            <p>Reveal the opening of Boba Spot’s new Sheikh Zayed branch and create excitement among the local audience.</p>
+            <p>Reveal the opening of Boba Spot's new Sheikh Zayed branch and create excitement among the local audience.</p>
             <div class="tags"><span>SMP</span><span>F&B</span></div>
           </div>
         </div>
-        
-                                <div class="project-card">
+
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Boba-Spot-Flyerr.jpg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Print Flyer</span><span>2025</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">19 / 20</div>
             <h3>Boba Spot</h3>
-            <p>Reveal the opening of Boba Spot’s new Sheikh Zayed branch and create excitement among the local audience.</p>
+            <p>Reveal the opening of Boba Spot's new Sheikh Zayed branch and create excitement among the local audience.</p>
             <div class="tags"><span>Print Flyer</span><span>F&B</span></div>
           </div>
         </div>
 
-                                <div class="project-card">
+        <div class="project-card">
           <div class="project-visual">
             <img src="imgs/Mobile Development Cover.jpeg" alt="">
-              <rect width="400" height="300" fill="var(--charcoal-2)"/>
-              <rect x="40" y="40" width="100" height="100" fill="var(--neon-pink)" opacity="0.3"/>
-              <rect x="160" y="100" width="100" height="100" fill="var(--dusty-rose)" opacity="0.4"/>
-              <rect x="280" y="40" width="80" height="100" fill="var(--espresso-light)" opacity="0.7"/>
-              <text x="40" y="260" fill="var(--ivory)" font-family="Fraunces, serif" font-size="28" font-style="italic"></text>
-            </svg>
             <div class="pv-glass"><span>Event Cover</span><span>2026</span></div>
           </div>
           <div class="project-info">
             <div class="p-index">20 / 20</div>
             <h3>Route</h3>
-            <p>Create an engaging event cover that promotes Route IT Training Center’s mobile development event and attracts aspiring developers interested in building mobile applications.</p>
+            <p>Create an engaging event cover that promotes Route IT Training Center's mobile development event and attracts aspiring developers interested in building mobile applications.</p>
             <div class="tags"><span>Event Cover</span><span>IT</span><span>Tech</span></div>
           </div>
         </div>
@@ -926,7 +827,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
-        <div class="carousel-progress"><b id="curIndex">01</b> / 03</div>
+        <div class="carousel-progress"><b id="curIndex">01</b> / 20</div>
       </div>
     </div>
   </div>
@@ -1005,55 +906,18 @@
   </div>
 </section>
 
-<!-- ================= TESTIMONIALS ================= -->
-<!-- <section class="section-pad testimonials-section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Testimonials</div>
-      <h2>What clients <em>say</em>.</h2>
-    </div>
-
-    <div class="test-grid reveal-stagger">
-      <div class="test-card">
-        <div class="quote-mark">"</div>
-        <p>Aya doesn't just design — she translates a brand's intent into something people actually remember.</p>
-        <div class="test-author">
-          <div class="ta-mark">M.K</div>
-          <div><div class="ta-name">Founder, Tech Startup</div><div class="ta-role">Brand Identity Client</div></div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="quote-mark">"</div>
-        <p>Sharp instincts, fast turnarounds, and a real point of view. Exactly what a growing brand needs.</p>
-        <div class="test-author">
-          <div class="ta-mark">R.S</div>
-          <div><div class="ta-name">Marketing Lead</div><div class="ta-role">Agency Partner</div></div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="quote-mark">"</div>
-        <p>Every deliverable felt considered. Aya brings a level of polish that's genuinely rare.</p>
-        <div class="test-author">
-          <div class="ta-mark">N.H</div>
-          <div><div class="ta-name">Creative Director</div><div class="ta-role">Beauty Brand Client</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <!-- ================= CONTACT ================= -->
 <section class="contact-section" id="contact">
   <div class="glow"></div>
   <div class="wrap contact-inner reveal">
     <h2>Let's create something <em>remarkable</em>.</h2>
     <p class="sub">I'm always excited about ambitious ideas, meaningful collaborations, and projects that challenge creativity.</p>
-    <a href="aya1essam2@gmail.com " class="mega-btn" data-hover>
+    <a href="mailto:aya1essam2@gmail.com" class="mega-btn" data-hover>
       <span>Start a Conversation</span>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6M2 6h20v12H2V6z"/></svg>
     </a>
     <div class="contact-meta">
-      <a href="aya1essam2@gmail.com">aya1essam2@gmail.com</a>
+      <a href="mailto:aya1essam2@gmail.com">aya1essam2@gmail.com</a>
       <span>Alexandria, Egypt</span>
       <span>Available Worldwide</span>
     </div>
